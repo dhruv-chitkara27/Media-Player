@@ -13,6 +13,13 @@ public class VideoPlayer extends BorderPane {
     MediaView mediaView;
     Pane pane;
 
+
+
+    //VideoBar
+
+    VideoBar bar;
+
+
     public VideoPlayer(String filepath) {
 
         media = new Media(filepath);
@@ -23,6 +30,10 @@ public class VideoPlayer extends BorderPane {
         pane.getChildren().add(mediaView);
         //one more line
         setCenter(pane);
+
+        //add Video Bar here;
+        bar = new VideoBar(mediaPlayer);
+        setBottom(bar);
 
         mediaPlayer.play();
     }
